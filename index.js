@@ -1,5 +1,5 @@
 var createStore = function(actions) {
-  let store = {
+  var store = {
     state: null,
     previousState: null,
     processor: createProcessor(actions),
@@ -36,7 +36,7 @@ var createStore = function(actions) {
 var createProcessor = function(obj, paths=[]) {
   if (obj.type=='actionGroup') { // if obj is actionGroup, create a processor out of it
     Object.keys(obj).forEach(function(actionName) {
-      let action = obj[actionName]
+      var action = obj[actionName]
 
       action.prototype.name = (paths.length==0 ? actionName : paths.join('.')+'.'+actionName)
       
@@ -48,8 +48,8 @@ var createProcessor = function(obj, paths=[]) {
         if (state === null) {
           return this.actionGroup.default()
         } else {
-          for (let i=0; i<Object.keys(this.actionGroup).length; i++) {
-            let k = Object.keys(this.actionGroup)[i]
+          for (var i=0; i<Object.keys(this.actionGroup).length; i++) {
+            var k = Object.keys(this.actionGroup)[i]
   
             if (this.actionGroup[k]===action) {
               return this.actionGroup[k](state, params)
@@ -62,7 +62,7 @@ var createProcessor = function(obj, paths=[]) {
       actionGroup: obj
     }
   } else { // if obj is a normal object, combine processors in it
-    let subProcessors = {}
+    var subProcessors = {}
     
     Object.keys(obj).forEach((k) => {
       subProcessors[k] = createProcessor(obj[k], [...paths, k])
@@ -71,7 +71,7 @@ var createProcessor = function(obj, paths=[]) {
     return {
       process: function(state, action, params) {
         if (state === null) {
-          let newState = {}
+          var newState = {}
 
           Object.keys(this.subProcessors).forEach((k) => {
             newState[k] = this.subProcessors[k].process(null)
@@ -79,7 +79,7 @@ var createProcessor = function(obj, paths=[]) {
           
           return newState
         } else {
-          let newState = {}
+          var newState = {}
           
           Object.keys(this.subProcessors).forEach((k) => {
             newState[k] = this.subProcessors[k].process(state[k], action, params)
@@ -94,10 +94,10 @@ var createProcessor = function(obj, paths=[]) {
 }
 
 var createActionGroup = function(obj) {
-  let propertiesObject = {}
+  var propertiesObject = {}
 
   Object.keys(obj).forEach(function(actionName) {
-    let action = obj[actionName]
+    var action = obj[actionName]
 
     propertiesObject[actionName] = {enumerable: true, value: action}
   })
