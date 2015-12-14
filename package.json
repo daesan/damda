@@ -1,0 +1,43 @@
+{
+  "name": "damda",
+  "version": "0.0.1",
+  "description": "State/actions container for Javascript client apps",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daesan/damda.git"
+  },
+  "keywords": [
+    "damda",
+    "state",
+    "redux",
+    "flux"
+  ],
+  "authors": [
+    "Dae San Hwang <daesan@polle.com> (https://github.com/daesan)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daesan/damda/issues"
+  },
+  "homepage": "https://github.com/daesan/damda",
+  "devDependencies": {
+  },
+  "npmName": "redux",
+  "npmFileMap": [
+    {
+      "basePath": "/dist/",
+      "files": [
+        "*.js"
+      ]
+    }
+  ]
+}
