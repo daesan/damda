@@ -1,4 +1,4 @@
-const createStore = function(actions) {
+var createStore = function(actions) {
   let store = {
     state: null,
     previousState: null,
@@ -33,7 +33,7 @@ const createStore = function(actions) {
   return store
 }
 
-const createProcessor = function(obj, paths=[]) {
+var createProcessor = function(obj, paths=[]) {
   if (obj.type=='actionGroup') { // if obj is actionGroup, create a processor out of it
     Object.keys(obj).forEach(function(actionName) {
       let action = obj[actionName]
@@ -93,7 +93,7 @@ const createProcessor = function(obj, paths=[]) {
   }
 }
 
-const createActionGroup = function(obj) {
+var createActionGroup = function(obj) {
   let propertiesObject = {}
 
   Object.keys(obj).forEach(function(actionName) {
