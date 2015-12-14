@@ -2,8 +2,7 @@
   "name": "damda",
   "version": "0.0.1",
   "description": "State/actions container for Javascript client apps",
-  "main": "lib/index.js",
-  "jsnext:main": "src/index.js",
+  "main": "index.js",
   "files": [
     "dist",
     "lib",
