@@ -1,6 +1,6 @@
 {
   "name": "damda",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "State/actions container for Javascript client apps",
   "main": "index.js",
   "files": [
