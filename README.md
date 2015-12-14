@@ -6,6 +6,15 @@ It simplifies react and react native app development by separating data manageme
 
 Damda was inspired by Redux. While the core ideas of Redux are inherited, Damda differs from Redux in that actions and reducer functions are not separate entities. In Damda, actions are state change functions that can be dispatched directly.
 
+### Installation
+
+To install the stable version:
+
+```
+npm install --save damda
+```
+
+### The Gist
 
 ```js
 const { createStore, createActionGroup } = require('damda')
